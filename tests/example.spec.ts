@@ -10,7 +10,7 @@ test('has title', async ({ page }) => {
 test('access link', async ({ page }) => {
   await page.goto('https://material.playwrightvn.com/');
 
-  // Click the link containing text "Bai 1: Register Page"
+  // Click the link containing text "Bài học 1: Register Page"
   await page.getByRole('link', { name: 'Bài học 1: Register Page' }).click();
 
   // Expects page to have a heading with the name of User Registration
