@@ -1,4 +1,4 @@
 - git init: Khởi tạo git cho thư mục hiện tại, đưa toàn bộ file trong thư mục vào trong working directory
 - git add <file_name>: Đưa 1 file cụ thể vào staging area
 - git add .: Đưa toàn bộ file hoặc những thay đổi trong thư mục hiện tại vào staging area
-- git commit -m "message": Commit các file có trong staging vào repository với "message" là tên (ghi chú) cho phiên bản commit đó
+- git commit -m "message": Commit các file có trong staging area vào repository với "message" là tên (ghi chú) cho phiên bản commit đó
