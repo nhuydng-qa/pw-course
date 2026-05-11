@@ -1,0 +1,30 @@
+a)
+Local: file1, file2, file3
+Working directory: -
+Staging area: -
+Repository: -
+b)
+Local: -
+Working directory: file1, file2, file3
+Staging area: -
+Repository: -
+c)
+Local: -
+Working directory: file1, file2, file3
+Staging area: -
+Repository: -
+d)
+Local: -
+Working directory: file2, file3
+Staging area: file1
+Repository: -
+e)
+Local: -
+Working directory: file2, file3
+Staging area: -
+Repository: file1
+f) 
+Local: -
+Working directory: file2, file3
+Staging area: -
+Repository: file1
