@@ -44,3 +44,5 @@
   * `PascalCase`: Dùng đặt tên class (vd: `YDang`).
 * **Console.log nâng cao:** 
   * In chuỗi kết hợp với biến bằng dấu `+` hoặc dùng template literals với backtick (`` `...${biến}...` ``)
+
+  --Update

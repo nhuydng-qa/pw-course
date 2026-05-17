@@ -8,10 +8,11 @@
 * Cân nặng tối thiểu là: 70 x 8 :10 = 56 kg
 * Phạm vi áp dụng: Công thức áp dụng cho 100 < chiều cao < 200
 */
-
 const height = 150;
 let idealWeight = (height - 100) * 9 / 10;
 let maxWeight = height - 100;
 let minWeight = (height - 100) * 8 / 10;
 
 console.log(`Cân nặng lý tưởng: ${idealWeight}; Cân nặng tối đa: ${maxWeight}; Cân nặng tối thiểu: ${minWeight}`);
+
+//update
