@@ -21,5 +21,3 @@ working directory.
   * `chore`: sửa nhỏ lẻ, xóa file, v.v..
   * `feat`: thêm tính năng mới.
   * `fix`: sửa lỗi.
-
-  --Update

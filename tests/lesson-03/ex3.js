@@ -11,5 +11,3 @@ for (let i = 1; i <= 100; i++) {
         console.log(`Số ${i} là số lẻ`);
     }
 }
-
-//Update
