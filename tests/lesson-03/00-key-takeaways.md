@@ -28,8 +28,7 @@
 * **Toán tử (Operators):**
   * **So sánh:** Khuyên dùng **`===`** (Strict Equality - so sánh cả giá trị và kiểu dữ liệu). Không nên dùng `==` (Loose Equality - tự động chuyển đổi kiểu dữ liệu trước khi so sánh).
   * **Logic:** `&&` (AND - trả về đúng nếu **cả 2 vế** đều đúng), `||` (OR - trả về đúng nếu **1 trong 2 vế** đúng).
-  * **Một ngôi:** Tăng/giảm giá trị (`++`, `--`). Tiền tố (Prefix: `++x`) và Hậu tố (Postfix: `x++`) 
-    *  Pre-increment (Tăng trước - dùng Prefix) và Post-increment (Tăng sau - dùng Postfix) khác nhau ở chỗ:
+  * **Một ngôi:** Tăng/giảm giá trị (`++`, `--`). Tiền tố (Prefix: `++x`) và Hậu tố (Postfix: `x++`) => Pre-increment (Tăng trước - dùng Prefix) và Post-increment (Tăng sau - dùng Postfix) khác nhau ở chỗ:
     * **x++** (Post-increment): Trả về giá trị hiện tại của i trước, rồi mới tăng i lên 1 đơn vị. (Trả về trước, tăng sau).
     * **++x** (Pre-increment): Tăng i lên 1 đơn vị trước, rồi mới trả về giá trị mới của i. (Tăng trước, trả về sau).
 * **Câu điều kiện (Conditionals):** 
