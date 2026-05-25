@@ -9,8 +9,13 @@
 * Phạm vi áp dụng: Công thức áp dụng cho 100 < chiều cao < 200
 */
 const height = 150;
-let idealWeight = (height - 100) * 9 / 10;
-let maxWeight = height - 100;
-let minWeight = (height - 100) * 8 / 10;
+
+if (height > 100 && height < 200) {
+    let idealWeight = (height - 100) * 9 / 10;
+    let maxWeight = height - 100;
+    let minWeight = (height - 100) * 8 / 10;
+} else {
+    console.log("Chiều cao không hợp lệ!")
+}
 
 console.log(`Cân nặng lý tưởng: ${idealWeight}; Cân nặng tối đa: ${maxWeight}; Cân nặng tối thiểu: ${minWeight}`);
