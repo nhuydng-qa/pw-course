@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Đăng ký', async ({ page }) => {
+test('Test 1: Register page', async ({ page }) => {
 
     await test.step('Đi tới trang chủ material', async () => {
         await page.goto("https://material.playwrightvn.com/");
@@ -10,7 +10,7 @@ test('Đăng ký', async ({ page }) => {
         await page.locator("//a[@href='01-xpath-register-page.html']").click();
     });
 
-    await test.step('Nhập thông tin đăng ký', async () => {
+    await test.step('a. Nhập thông tin đăng ký', async () => {
         //Username
         await page.locator("//input[@id='username']").fill("ydang");
 
@@ -38,11 +38,10 @@ test('Đăng ký', async ({ page }) => {
         await page.locator("//input[@id='profile']").setInputFiles(filePath);
 
         // Biography
-        await page.locator("//input[@id='bio']").fill('Đây là một đoạn text dùng để test.');
+        await page.locator("//textarea[@id='bio']").fill('Đây là một đoạn text dùng để test.');
     });
 
     await test.step('b. Click button Register', async () => {
         await page.locator("//button[text()='Register']").click();
     });
-
 });
