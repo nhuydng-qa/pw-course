@@ -10,7 +10,7 @@ test('Test 4: Personal Notes', async ({ page }) => {
         await page.locator("//a[@href='04-xpath-personal-notes.html']").click();
     });
 
-    await test.step('a. Thêm mới 10 not với nội dung sau ở bảng dưới đây', async () => {
+    await test.step('a. Thêm mới 10 note với nội dung sau ở bảng dưới đây', async () => {
         const data = [
             {
                 title: 'click',
