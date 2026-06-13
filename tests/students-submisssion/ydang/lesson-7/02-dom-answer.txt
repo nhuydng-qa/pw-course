@@ -1,0 +1,39 @@
+Giả sử bạn đang đứng tại vị trí của //div[@id='child']:
+a. Các phần tử con (child)
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required="">
+b. Các phần tử cha (parent)
+<form id="registrationForm">...</form>
+c. Các phần tử hậu duệ (descendant)
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required="">
+d. Các phần tử tổ tiên (ancestor)
+<form id="registrationForm">...</form>
+e. Các phần tử anh em (sibling)
+<div class="form-group" id="parent">...</div>
+<div class="form-group">...</div> (Gender)
+<div class="form-group">...</div> (Hobbies)
+<div class="form-group">...</div> (Register button)
+f. Các phần tử phía sau (following)
+<div class="form-group">
+    <label for="gender">Gender:</label>
+    ...
+</div> 
+<div class="form-group">
+    <label for="hobbies">Hobbies:</label>
+    ...
+</div>
+<div class="form-group">
+    <button type="submit">Register</button>
+</div>
+g. Các phần tử phía trước (preceding)
+<div class="form-group" id="parent">
+    <label for="username" id="preceding">Username:</label>
+    <input type="text" id="username" name="username" required="">
+</div>
+h. Các phần tử anh em phía sau cùng cấp (following-sibling)
+<div class="form-group">...</div> (Gender)
+<div class="form-group">...</div> (Hobbies)
+<div class="form-group">...</div> (Register button)
+i. Các phần tử anh em phía trước cùng cấp (preceding-sibling)
+<div class="form-group" id="parent">...</div>
