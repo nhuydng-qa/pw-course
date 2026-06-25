@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 import { RegisterPage } from './01-pom';
 
 test('Test 1: Register page', async ({ page }) => {
-    let registerPage: RegisterPage;
-    registerPage = new RegisterPage(page);
+    const registerPage = new RegisterPage(page);
+
     const userTestData = {
         username: 'ydang',
         email: 'test@gmail.com',
@@ -16,9 +16,8 @@ test('Test 1: Register page', async ({ page }) => {
         bio: 'Đây là đoạn text chạy bằng mô hình POM.'
     };
 
-
-    await test.step('Click vào Bài học 1: Register Page', async () => {
-        registerPage.goto();
+    await test.step('Đi tới trang chủ và click vào Bài học 1: Register Page', async () => {
+        await registerPage.goto();
     });
 
     await test.step('a. Nhập thông tin đăng ký', async () => {
@@ -46,7 +45,5 @@ test('Test 1: Register page', async ({ page }) => {
                 await expect(registerPage.registeredInfo).toContainText(hobbyName);
             }
         }
-
     });
-
-})
+});

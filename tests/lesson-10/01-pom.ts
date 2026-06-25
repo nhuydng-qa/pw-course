@@ -3,16 +3,18 @@ import { Locator } from '@playwright/test';
 
 class MaterialBasePag {
     page: Page;
+    baseURL: string;
     xpathRegisterPage: string;
     xpathProductPage: string;
-    cssTodoPage: string;
+    xpathTodoPage: string;
     personalNote: string;
 
     constructor(page: Page) {
         this.page = page;
+        this.baseURL = "https://material.playwrightvn.com/";
         this.xpathRegisterPage = "//a[@href='01-xpath-register-page.html']";
         this.xpathProductPage = "//a[@href='02-xpath-product-page.html']";
-        this.cssTodoPage = "//a[@href='03-xpath-todo-list.html']";
+        this.xpathTodoPage = "//a[@href='03-xpath-todo-list.html']";
         this.personalNote = "//a[@href='04-xpath-personal-notes.html']";
     }
 
@@ -125,7 +127,6 @@ export class ProductPage extends MaterialBasePag {
     cartRows: Locator;
     totalPriceLabel: Locator;
 
-
     constructor(page: Page) {
         super(page);
         this.cartRows = this.page.locator("//tbody[@id='cart-items']//tr");
@@ -143,8 +144,85 @@ export class ProductPage extends MaterialBasePag {
 
     async addProductToCart(productid: number, quantity: number = 1) {
         await this.getAddToCartButton(productid).click({ clickCount: quantity });
-    } 
+    }
+
+    getCartProductPrice(productName: string): Locator {
+        return this.page.locator(`//tbody[@id='cart-items']/tr[td[text()='${productName}']]/td[2]`);
+    }
+
     getCartProductQuantity(productName: string): Locator {
         return this.page.locator(`//tbody[@id='cart-items']/tr[td[text()='${productName}']]/td[3]`);
+    }
+
+    getCartProductTotal(productName: string): Locator {
+        return this.page.locator(`//tbody[@id='cart-items']/tr[td[text()='${productName}']]/td[4]`);
+    }
+
+    async parsePrice(amount: Locator) {
+        const totalText = await amount.innerText()
+        return parseFloat(totalText.replace('$', '').trim());
+    }
+}
+
+export class TodoPage extends MaterialBasePag {
+    newTaskInput: Locator;
+    addTaskButton: Locator;
+
+    constructor(page: Page) {
+        super(page);
+        this.newTaskInput = this.page.locator("//input[@id='new-task']");
+        this.addTaskButton = this.page.locator("//button[@id='add-task']");
+    }
+
+    async goto() {
+        await this.openMaterialPage();
+        await this.gotoPage(this.xpathTodoPage);
+    };
+
+    async addTodoTask(task: string) {
+        await this.newTaskInput.fill(task);
+        await this.addTaskButton.click();
+    }
+
+    getTaskLocator(task: string): Locator {
+        return this.page.locator(`//li[span[text()='${task}']]`);
+    }
+
+    getDeleteButtonByTaskName(task: string) {
+        return this.page.locator(`//li[span[text()='${task}']]//button[text()='Delete']`);
+    }
+
+    async deleteTodoTask(task: string) {
+        await this.getDeleteButtonByTaskName(task).click();
+    }
+}
+
+export class PersonalNotePage extends MaterialBasePag {
+    searchNote: Locator;
+    titleInput: Locator;
+    contentInput: Locator;
+    noteTitles: Locator;
+    noteContents: Locator;
+    addNoteButton: Locator;
+
+    constructor(page: Page) {
+        super(page);
+        this.searchNote = this.page.locator("//input[@id='search']");
+        this.titleInput = this.page.locator("//input[@id='note-title']");
+        this.contentInput = this.page.locator("//textarea[@id='note-content']");
+        this.noteTitles = this.page.locator("//ul[@id='notes-list']//strong");
+        this.noteContents = this.page.locator("//ul[@id='notes-list']//p");
+        this.addNoteButton = this.page.locator("//button[@id='add-note']");
+    }
+
+    async goto() {
+        await this.openMaterialPage();
+        await this.gotoPage(this.personalNote);
+    };
+
+    async addNote(title: string, content: string) {
+        await this.titleInput.fill(title);
+        await this.contentInput.fill(content);
+        await this.addNoteButton.click();
     }
 }
