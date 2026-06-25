@@ -36,8 +36,8 @@
 ## 4. Công cụ test API (Postman)
 * **Postman** là công cụ giao diện trực quan dùng để gửi request và nhận response từ API (ngoài ra có thể dùng `cURL` trên terminal).
 * **Các thành phần chính trên giao diện Postman:**
-    * *Sidebar (Bên trái):* Quản lý **Collections** (tổ chức các API thành nhóm), **Environments** (quản lý biến môi trường dev/staging/prod), History....
-    * *Main Workspace (Giữa):* Nơi làm việc chính để chọn HTTP Method, nhập URL, setup Params, Headers, Body, và bấm nút **Send** để xem kết quả,.
+    * *Sidebar (Bên trái):* Quản lý **Collections** (tổ chức các API thành nhóm), **Environments** (quản lý biến môi trường dev/staging/prod), History...
+    * *Main Workspace (Giữa):* Nơi làm việc chính để chọn HTTP Method, nhập URL, setup Params, Headers, Body, và bấm nút **Send** để xem kết quả.
 
 ## 5. API Testing với Playwright
 * **Sử dụng `request` fixture:** Playwright cho phép gọi API trực tiếp trong code (không cần thao tác qua UI trình duyệt) thông qua fixture `request`.
