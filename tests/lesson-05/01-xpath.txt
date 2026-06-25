@@ -10,9 +10,9 @@ c. Lấy hàng đầu tiên trong tbody
 a. Lấy input có placeholder="Số điện thoại"
 //input[@placeholder='Số điện thoại'];
 b. Lấy email của "Trần Thị Bình" (hàng 2, cột 2)
-//tr[td[text()='Trần Thị Bình]]/td[2]
+//tr[td[text()='Trần Thị Bình']]/td[2]
 c. Lấy số điện thoại của "Lê Hoàng Cường" (hàng 3, cột 3)
-//tr[td[text()='Lê Hoàng Cường]]/td[3]
+//tr[td[text()='Lê Hoàng Cường']]/td[3]
 d. Lấy button có class="btn-register"
 //button[@class='btn-register'];
 e. Lấy table có id="resultTable"
