@@ -41,7 +41,7 @@
 
 ## 5. API Testing với Playwright
 * **Sử dụng `request` fixture:** Playwright cho phép gọi API trực tiếp trong code (không cần thao tác qua UI trình duyệt) thông qua fixture `request`.
-    * *Cú pháp cơ bản:* `const response = await request.get('<URL>');` (lấy kết quả gán vào biến response),.
-* **Xử lý API có Authentication (Xác thực):** Quá trình này thường gồm 2 bước,:
+    * *Cú pháp cơ bản:* `const response = await request.get('<URL>');` (lấy kết quả gán vào biến response).
+* **Xử lý API có Authentication (Xác thực):** Quá trình này thường gồm 2 bước:
     1. Gọi API đăng nhập với thông tin username/password để nhận về một chuỗi `token`.
-    2. Lấy chuỗi `token` đó gán vào `header` của các API tiếp theo. (Nếu gọi các API cần quyền truy cập mà thiếu token ở header thì sẽ gặp lỗi báo không có quyền, ví dụ lỗi 401),.
+    2. Lấy chuỗi `token` đó gán vào `header` của các API tiếp theo. (Nếu gọi các API cần quyền truy cập mà thiếu token ở header thì sẽ gặp lỗi báo không có quyền, ví dụ lỗi 401).
