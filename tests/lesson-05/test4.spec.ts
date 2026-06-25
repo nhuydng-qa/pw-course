@@ -64,6 +64,16 @@ test('Test 4: Personal Notes', async ({ page }) => {
     });
 
     await test.step('b. Thực hiện search với keyword "một hoặc nhiều"', async () => {
-        await page.locator("//input[@id='search']").fill("một hoặc nhiều");
+        const keyword = "một hoặc nhiều";
+        await page.locator("//input[@id='search']").fill(keyword);
+
+        // Kiểm tra kết quả search
+        const totalNotes = Number((await page.locator("//div[@id='note-count']").innerText()).at(-1))
+        for (let i = 0; i < totalNotes; i++) {
+            const title = await page.locator("//ul[@id='notes-list']//strong").nth(i).innerText();
+            const content = await page.locator("//ul[@id='notes-list']//p").nth(i).innerText();
+            const fullText = `${title} ${content}`.toLowerCase();
+            await expect(fullText).toContain(keyword.toLowerCase());
+        }
     });
 });
