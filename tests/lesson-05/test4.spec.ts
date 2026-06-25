@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test('Test 4: Personal Notes', async ({ page }) => {
-
     await test.step('Đi tới trang chủ material', async () => {
         await page.goto("https://material.playwrightvn.com/");
     });
