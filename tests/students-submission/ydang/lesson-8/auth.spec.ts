@@ -1,20 +1,20 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('AUTH - Authentication', () => {
+    const BASE_URL = "https://pw-practice-dev.playwrightvn.com/wp-admin";
+    const ADMIN_USERNAME = 'betterbytes.academy.admin';
+    const ADMIN_PASSWORD = 'StrongPass@BetterBytesAcademy';
 
     // Đi tới trang login
     test.beforeEach(async ({ page }) => {
-        {
-            await page.goto('https://pw-practice-dev.playwrightvn.com/wp-admin');
-        }
+        await page.goto(BASE_URL);
     });
 
     test('@AUTH_001: Login fail', async ({ page }) => {
         const wrongUsername = 'betterbytes.admin'
-        const password = 'StrongPass@BetterBytesAcademy';
         await test.step('Nhập vào thông tin username, password bị sai', async () => {
             await page.locator("//input[@id='user_login']").fill(wrongUsername);
-            await page.locator("//input[@id='user_pass']").fill(password);
+            await page.locator("//input[@id='user_pass']").fill(ADMIN_PASSWORD);
         });
 
         await test.step('Click button login', async () => {
@@ -27,10 +27,9 @@ test.describe('AUTH - Authentication', () => {
     });
 
     // test('@AUTH_001: Login fail with wrong password', async ({ page }) => {
-    //     const username = 'betterbytes.academy.admin'
     //     const wrongPass = 'Pass@BetterBytesAcademy';
     //     await test.step('Nhập vào thông tin username, password bị sai', async () => {
-    //         await page.locator("//input[@id='user_login']").fill(username);
+    //         await page.locator("//input[@id='user_login']").fill(ADMIN_USERNAME);
     //         await page.locator("//input[@id='user_pass']").fill(wrongPass);
     //     });
 
@@ -39,16 +38,14 @@ test.describe('AUTH - Authentication', () => {
     //     });
 
     //     // Hiển thị lỗi
-    //     await expect(await page.getByText(`Error: The password you entered for the username ${username} is incorrect.`)).toBeVisible();
+    //     await expect(await page.getByText(`Error: The password you entered for the username ${ADMIN_USERNAME} is incorrect.`)).toBeVisible();
 
     // });
 
     test('@AUTH_002: Login success', async ({ page }) => {
-        const username = 'betterbytes.academy.admin'
-        const password = 'StrongPass@BetterBytesAcademy';
-        await test.step('Nhập vào thông tin username, password bị sai', async () => {
-            await page.locator("//input[@id='user_login']").fill(username);
-            await page.locator("//input[@id='user_pass']").fill(password);
+        await test.step('Nhập vào thông tin username và password đúng', async () => {
+            await page.locator("//input[@id='user_login']").fill(ADMIN_USERNAME);
+            await page.locator("//input[@id='user_pass']").fill(ADMIN_PASSWORD);
         });
 
         await test.step('Click button login', async () => {
